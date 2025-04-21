@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
@@ -9,7 +8,14 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      // Remove 'src/main.tsx' from external if it needs to be bundled
-    }
-  }
+      input: {
+        main: 'index.html', // Ensure this points to your root HTML
+      },
+    },
+  },
+  resolve: {
+    alias: {
+      // Add aliases if needed, e.g., for 'src'
+    },
+  },
 });
