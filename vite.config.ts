@@ -9,13 +9,11 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: 'index.html', // Ensure this points to your root HTML
+        main: 'index.html', 
       },
     },
   },
   resolve: {
-    alias: {
-      // Add aliases if needed, e.g., for 'src'
-    },
+    mainFields: ['browser', 'module', 'main'], 
   },
 });
