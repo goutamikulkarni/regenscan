@@ -9,7 +9,7 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      external: ['src/main.tsx']
+      // Remove 'src/main.tsx' from external if it needs to be bundled
     }
   }
 });
